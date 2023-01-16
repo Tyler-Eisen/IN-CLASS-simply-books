@@ -12,7 +12,7 @@ export default function NavBar() {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Link passHref href="/">
-          <Navbar.Brand>📚 Simply Books 📚</Navbar.Brand>
+          <Navbar.Brand>📚 Simply Books  📚</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">
@@ -23,6 +23,15 @@ export default function NavBar() {
             </Link>
             <Link passHref href="/book/new">
               <Nav.Link>Create Book</Nav.Link>
+            </Link>
+            <Link passHref href="/authors ">
+              <Nav.Link>Show Authors</Nav.Link>
+            </Link>
+            <Link passHref href="/author/new">
+              <Nav.Link>Create Author</Nav.Link>
+            </Link>
+            <Link passHref href="/profile">
+              <Nav.Link>Profile</Nav.Link>
             </Link>
           </Nav>
         </Navbar.Collapse>

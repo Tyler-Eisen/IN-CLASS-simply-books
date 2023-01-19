@@ -72,6 +72,14 @@ const getAuthorBooks = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const favoriteAuthors = (uid) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/authors.json?orderBy="uid"&equalTo="${uid}"`)
+    .then((response) => {
+      const fave = Object.values(response.data).filter((item) => item.favorite);
+      resolve(fave);
+    })
+    .catch(reject);
+});
 export {
   getAuthors,
   createAuthor,
@@ -79,4 +87,5 @@ export {
   deleteSingleAuthor,
   updateAuthor,
   getAuthorBooks,
+  favoriteAuthors,
 };

@@ -19,7 +19,7 @@ export default function AuthorCard({ authorObj, onUpdate }) {
         <Card.Title>{authorObj.first_name}</Card.Title>
         <Card.Title>{authorObj.last_name}</Card.Title>
         {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS  */}
-        <Link href={`/book/${authorObj.firebaseKey}`} passHref>
+        <Link href={`/author/${authorObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
         {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
@@ -45,5 +45,5 @@ AuthorCard.propTypes = {
   onUpdate: PropTypes.func,
 };
 AuthorCard.defaultProps = {
-  onUpdate: () => {},
+  onUpdate: PropTypes.func.isRequired,
 };
